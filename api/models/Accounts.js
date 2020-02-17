@@ -13,10 +13,9 @@ lastname: {type:String, required:true},
 firstname: {type:String, required:true},
 createdAt: {type:Date},
 updatedAt: {type:Date},
-photo: {type:String, required:false},
 role: {type:mongoose.Schema.Types.ObjectId, ref:'Role'},
 isVerified:{type:Boolean, default:false},
 status:{type:Boolean, default:true}
 });
 
-module.exports = mongoose.model('Account', accountSchema);
+module.exports = mongoose.model('Accounts', accountSchema);

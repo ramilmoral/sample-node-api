@@ -32,7 +32,7 @@ app.get('/', function(req, res){
   res.render('index',{
      title:'Home',
      page_title: 'Sample Node Api',
-     message: 'This is homepage suckers!'
+     message: 'This is homepage!'
   })
 })
 
