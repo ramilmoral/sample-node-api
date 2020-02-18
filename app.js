@@ -6,10 +6,23 @@ var logger = require('morgan');
 var app = express();
 const mongoose = require('mongoose');
 
+// Set global request headers
+app.use((req, res, next)=>{
+  res.header("Access-Control-Allow-Origin","*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    if(req.method==="OPTIONS"){
+      res.header("Access-Control.Allow-Methods","PUT, POST, PATCH, DELETE, GET");
+      return res.status(200).json({});
+    }
+  next();
+});
+
 var accountsRoutes = require('./api/routes/accounts');
 
-
-
+// Connect to the Mongodb Database
 mongoose.connect(`mongodb://${process.env.MONGODB_SERVER}`,{
   useUnifiedTopology: true,
   useNewUrlParser: true 
