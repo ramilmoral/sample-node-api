@@ -2,6 +2,6 @@
   "env":{
     "MONGODB_SERVER":"localhost:27017/testdb",
     "JWT_KEY":"secret_lang",
-    "PORT":"4000"
+    "PORT":"3000"
   }  
 }

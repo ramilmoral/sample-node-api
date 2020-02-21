@@ -94,7 +94,9 @@ const accountLogin = (req, res, next) => {
 
 // Read / Fetch all account data
 const getAll = (req, res, next)=>{
-  Account.find().sort({_id: -1})
+  Account.find()
+  .select('email firstname lastname') // to display all just remove select()
+  .sort({_id: -1}) // sort to DESC order
   .exec()
   .then(account => {
     res.status(200).json({

@@ -8,7 +8,12 @@ module.exports = (req, res, next) =>{
     req.userData = decoded;
     next();
   }catch(err){
-    return res.status(401).json({
+    if (err instanceof jwt.JsonWebTokenError) {
+      return res.status(401).json({
+        message:'Unauthorized'
+      })
+    }
+    return res.status(400).json({
       message:'Auth failed'
     })
   }
