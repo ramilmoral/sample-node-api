@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const argon = require('argon2');
 const Account = require('../models/Accounts');
 const jwtGenerator = require('../helpers/jwt-generator');
-// const mail = require('../middleware/mailer');
-// const emailTemplate = require('../emails/email');
-// const Token = require('../models/Token');
-// const tokenCtrl = require('../controllers/TokenController')
 
 /**
  * Create a CRUD operations inside the Account Controller
